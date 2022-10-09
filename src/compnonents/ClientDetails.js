@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ClientDetails(customerName,) {
+export default function ClientDetails({customerName}) {
   return (
     <>
  <section className="mt-5">

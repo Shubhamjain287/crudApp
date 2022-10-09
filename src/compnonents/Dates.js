@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Dates(invoiceNumber,invoiceDate) {
+export default function Dates({invoiceNumber,invoiceDate}) {
   return (
     <>
   <article className="my-5 flex items-end justify-end">

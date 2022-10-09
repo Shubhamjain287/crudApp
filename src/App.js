@@ -9,19 +9,19 @@ import Table from "./compnonents/Table";
 import TableForm from "./compnonents/TableForm";
 function App() {
 const [showCrud,setShowCrud]=useState(false)
-const [name,setName]=useState("Adarsh pal")
-const [email,setEmail]=useState("paladarsh601@gmail.com")
-const [phone,setPhone]=useState("767 747 477")
-const [customerName,setCustomerName]=useState("rupesh")
-const [invoiceNumber,setInvoiceNumber]=useState("10003")
-const [invoiceDate,setInvoiceDate]=useState("30/11/2012")
+const [name,setName]=useState("")
+const [email,setEmail]=useState("")
+const [phone,setPhone]=useState("")
+const [customerName,setCustomerName]=useState("")
+const [invoiceNumber,setInvoiceNumber]=useState("")
+const [invoiceDate,setInvoiceDate]=useState("")
 const [itemName,setItemName]=useState("")
 const [quantity,setQuantity]=useState("")
 const [price,setPrice]=useState("")
 const [amount,setAmount]=useState("")
 const [list,setList]=useState([])
 const handlePrint =()=>{
-window.print()
+   window.print()
 }
 return (
 <>
@@ -34,13 +34,10 @@ return (
       <Dates invoiceNumber={invoiceNumber} invoiceDate={invoiceDate} />
       <Table 
          itemName={itemName}
-         setItemName={setItemName}
          quantity={quantity}
-         setQuantity={setQuantity}
          price={price}
-         setPrice={setPrice}
          amount={amount}
-         setAmount={setAmount}
+         list={list}
          />
       <Notes/>
       <Footer 

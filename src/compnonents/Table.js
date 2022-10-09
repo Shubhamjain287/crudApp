@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Table({itemName,quantity,price,amount}) {
+export default function Table({itemName,quantity,price,amount,list}) {
   return (
     <>
     
@@ -14,15 +14,19 @@ export default function Table({itemName,quantity,price,amount}) {
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>{itemName}</td>
-            <td>{quantity}</td>
-            <td>{price}</td>
-            <td>{amount}</td>
-
-        </tr>
+        {
+          list && list.length ? list.map(({itemName,quantity,price,amount}) => {
+            return (
+              <tr>
+                <td>{itemName}</td>
+                <td>{quantity}</td>
+                <td>{price}</td>
+                <td>{amount}</td>
+            </tr>
+            )
+          }) : null
+        }
     </tbody>
-       
     </table>
     </>
   )

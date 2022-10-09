@@ -1,14 +1,16 @@
-import React,{ useState, useEffect } from "react"
+import React,{ useEffect, useState } from "react"
 import { v4 as uuidv4 } from "uuid"
+import Table from "./Table"
 
 export default function TableForm({itemName,setItemName,quantity,setQuantity,price,setPrice,amount,setAmount,list,setList}) {
 
+  const [IsEditing, setIsEditing] = useState();
      // Submit form function
   const handleSubmit = (e) => {
     e.preventDefault()
 
     if (!itemName || !quantity || !price) {
-      toast.error("Please fill in all inputs")
+      console.log("Please fill in all inputs")
     } else {
       const newItems = {
         id: uuidv4(),
@@ -61,9 +63,12 @@ export default function TableForm({itemName,setItemName,quantity,setQuantity,pri
           type="submit"
           className="mb-5 bg-blue-500 text-white font-bold py-2 px-8 rounded shadow border-2 border-blue-500 hover:bg-transparent hover:text-blue-500 transition-all duration-300"
         >
-          {isEditing ? "Editing Row Item" : "Add Table Item"}
+          {IsEditing ? "Editing Row Item" : "Add Table Item"}
         </button>
-  </form>  
+  </form>
+
+  <Table />
+
   </>
   )
 }
